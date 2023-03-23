@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_21_094147) do
+ActiveRecord::Schema.define(version: 2023_03_22_200636) do
+
+  create_table "todos", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description", null: false
+    t.integer "status", default: 0, null: false
+    t.integer "priority", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
